@@ -1,0 +1,64 @@
+<div class="container">
+    <!--
+        String interpolation o interpolación, el cual es el mecanismo para 
+        sustituir una expresión por un valor de cadena en una plantillas
+    -->
+    <h1>{{msgTitulo}}</h1>
+    
+    <div class="row">
+        <div class="col-2">
+            <label for="nombreProducto">Categoría:</label>
+        </div>
+        <div class="col-3">
+            <!--
+                ngModel basicamente realiza un enlace entre una propiedad definida en la clase 
+                TypeScript del componente VS una propiedad en la vista (template) del componente.
+
+                Sintaxis para enlace de una dirección.
+                    [ngModel]="idCategoria"
+                Sintaxis para enlace de datos bidireccional (doble biding).
+                    [(ngModel)]="idCategoria"
+                
+                También se encuentra disponible un evento llamado ngModelChange que se ejecuta
+                cuando cambia el valor de una propiedad asociada el ngModel, con el cual se 
+                puede obtener un comportamiento idéntico al doble binding.
+
+                El atributo name de los elementos que van dentro de un formulario deben ser asignados 
+                si dichos elementos se encuentran dentro de un elemento form.
+
+            -->
+            <select id="sCategorias" name="sCategorias" [(ngModel)]="idCategoria">
+                <option *ngFor="let c of categorias" value="{{c.id}}">{{c.descripcion}}</option>
+            </select>
+        </div>
+        <div class="col-2">
+            
+        </div>
+        <div class="col-2">
+            <label for="txtNombreProducto">Nombre del producto:</label>
+        </div>
+        <div class="col-3">
+            <input type="text" name="txtNombreProducto" id="txtNombreProducto" [(ngModel)]="nombreProducto"
+                (ngModelChange)='onChange($event)' />
+        </div>
+    </div>
+
+    <hr />
+
+    <!--
+        Se pasa el valor de las propiedades:
+            'nombreProducto', idCategoria' 
+        del componente padre a las propiedades:
+            [nombreProducto], [idCategoria] 
+        del componente hijo.
+        Por otro lado, a traves de la propiedad  
+            (notificarEvento) del componente hijo se notifica al elemento padre 
+        a través del método recibirNotificacionDelComponenteHijo que algunas priopuedades han cambiado.
+     -->
+    <detalleProducto 
+        [nombreProducto]="nombreProducto" 
+        [idCategoria]="idCategoria"
+        (notificarEvento)="recibirNotificacionDelComponenteHijo($event)">
+    </detalleProducto>
+
+</div>

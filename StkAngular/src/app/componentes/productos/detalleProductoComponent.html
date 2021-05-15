@@ -1,0 +1,104 @@
+<div class="container-fluid">
+        
+    <p *ngIf="mostrarCategoriaSeleccionada()">
+        Productos disponibles para la categoría [{{idCategoria}}] con nombre [{{nombreProducto}}].
+    </p>
+
+    <!--Se agrega un registro por default al cargar esta vista.-->
+    <table class="table" *ngIf="agregarProducto == false">
+
+        <thead class="bg-dark text-white negrita">
+            <td>Producto</td>
+            <td>Marca</td>
+            <td>Precio</td>
+            <td>Categoría</td>
+            <td>Estatus</td>
+            <td></td>
+        </thead>
+    
+        <tbody>
+            <tr>
+                <td>{{nombre}}</td>
+                <td>{{marca}}</td>
+                <td>{{precio}}</td>
+                <td>{{categoria}}</td>
+                <td>{{status}}</td>
+                <td>
+                    <button class="btn btn-primary btn-sm" 
+                        (click)="notificarAlcomponentePadre($event)">
+                        Notificar evento
+                    </button>
+                </td>
+            </tr>
+            
+            <!--Validar l funcionamiento del ng-container-->
+            <tr *ngIf="productos.length <= 0">
+                <td colspan="5" class="text-danger negrita">No existen productos para la categoría seleccionada.</td>
+                <td colspan="1">
+                    <button class="btn btn-primary btn-sm" 
+                        (click)="agregar()">
+                        Agregar
+                    </button>   
+                </td>
+            </tr>
+
+            <!--<tr *ngFor="let producto of productos; let primerElemento = first; let ultimoElemento = last;"  
+                [style.color]="producto.status == true ? 'green' : 'red'" >-->
+            <tr *ngFor="let producto of this.productos; let primerElemento = first; let ultimoElemento = last;"  
+                    [class.agotado]="producto.status == false" >
+                
+                <td>{{producto.nombre}}</td>
+                <td>{{producto.marca}}</td>
+                <td>{{producto.precio}}</td>
+                <td>{{producto.categoria}}</td>
+                <td>{{producto.status}}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" 
+                        (click)="eliminar(producto)">
+                        Eliminar
+                    </button>   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <!--Tabla con el detalle de los productos según el combo categoria en la vista plantilla de productos-->
+    <table class="table" *ngIf="agregarProducto == true">
+
+        <thead class="bg-dark text-white negrita">
+            <td>Producto</td>
+            <td>Marca</td>
+            <td>Precio</td>
+            <td>Categoría</td>
+            <td>Estatus</td>
+            <td></td>
+        </thead>
+    
+        <tbody>
+            <tr>
+                <td>
+                    <input type="text" [(ngModel)]="nuevoProducto.nombre"/>
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="nuevoProducto.marca"/>
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="nuevoProducto.precio"/>
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="nuevoProducto.categoria" disabled = "true"/>
+                </td>
+                <td>
+                    <input type="text" [(ngModel)]="nuevoProducto.status"/>
+                </td>
+                <td colspan="6">
+                    <button class="btn btn-primary btn-sm" 
+                        (click)="guardar()">
+                        Guardar
+                    </button>   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

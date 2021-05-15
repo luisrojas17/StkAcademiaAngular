@@ -1,0 +1,91 @@
+<div class="container">
+    <h1>{{msgTitulo}}</h1>
+
+    <div *ngIf="showMsgError" class="alert alert-danger" role="alert">
+        {{msgError}}
+    </div>
+
+    <table *ngIf="mostrarDetalle == false" class="table">
+        <thead class="bg-dark text-white negrita">
+            <td></td>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>User Name</td>
+            <td>Email</td>
+            <td></td>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of this.usuarios; let i = index;">
+                <td>
+                    <button class="btn btn-primary" (click)="verDetalle(usuario.id)">
+                        Ver
+                    </button>
+                </td>
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.username}}</td>
+                <td>{{usuario.email}}</td>
+            </tr>
+            <tr *ngIf="usuario">
+                <td></td>
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.username}}</td>
+                <td>{{usuario.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table *ngIf="mostrarDetalle" class="table">
+
+        <thead class="bg-dark text-white negrita">
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>User Name</td>
+            <td>Email</td>
+            <td>Teléfono</td>
+            <td>Sitio Web</td>
+            <td colspan="4" style="text-align: justify;">
+                Dirección<br />
+                (Calle - Localidad - Ciudad - Código postal)
+            </td>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.username}}</td>
+                <td>{{usuario.email}}</td>
+                <td>{{usuario.phone}}</td>
+                <td>{{usuario.website}}</td>
+                <td>{{usuario.address.street}}</td>
+                <td>
+                    {{usuario.address.suite}}
+                </td>
+                <td>
+                    {{usuario.address.city}}
+                </td>
+                <td>
+                    {{usuario.address.zipcode}}
+                </td>
+
+            </tr>
+
+            <tr>
+                <td colspan="12">
+                    <button class="btn btn-primary" (click)="regresar()">
+                        Regresar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+<!--<ng-container *ngIf="usuario">
+    <span>{{usuario.id}}</span><br/>
+    <span>Nombre:{{usuario.name}}</span><br/>
+    <span>User Name:{{usuario.username}}</span><br/>
+    <span>Email:{{usuario.email}}</span><br/>
+</ng-container>-->
