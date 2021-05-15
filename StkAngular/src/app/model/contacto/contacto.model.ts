@@ -1,4 +1,6 @@
 export class Contacto {
+    //En una propiedad readonly solo se puede asignar el valor cuando es definida 
+    //o bien en el constructor
     readonly email: string;
     readonly telefono: string;
 

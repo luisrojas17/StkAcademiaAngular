@@ -49,5 +49,20 @@
     "inquirer": "^6.2.2",
     "inquirer-autocomplete-prompt": "^1.0.1",
     "open": "^7.0.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisrojas17/StkAcademiaAngular.git"
+  },
+  "keywords": [
+    "StkAngularWithFirebase"
+  ],
+  "author": "Jose Luis Rojas Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luisrojas17/StkAcademiaAngular/issues"
+  },
+  "homepage": "https://github.com/luisrojas17/StkAcademiaAngular#readme"
 }
