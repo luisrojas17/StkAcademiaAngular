@@ -1,0 +1,201 @@
+body, ul, ul, a, h1, h2, p {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: rgb(65, 65, 235);
+    /*Genera un margen dentro del contenedor.*/
+    /*padding: 0px;*/
+    text-align: center;
+    color: white;
+    /*Posicionamiento asignado*/
+    position: fixed;
+    width: 100%;
+    /*
+        Indica la profundidad en la que se encuentra cada elemento.
+        Por default todos los elementos cuentan con el indice 0, lo cual ocasiona que si hay 
+        varios elementos estos comiencen a apilarse.
+        El valor 1 indica que el elemento debe posicionarse al frente de un elemento.
+        El valor -1 indica que el elemento debe posicionarse detrás de un elemento.
+    */
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+header h1 {
+    font-family: 'Bree Serif', serif;
+}
+
+.banner {
+    /*
+        Posicionamiento relativo de acuerdo al contenedor padre.
+    */
+    position: relative;
+    
+}
+
+.banner img {
+    width: 100%;
+}
+
+.banner .welcome {
+    /*
+        Posicionamiento absoluto al contenedor padre con valores especificos.
+    */
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    background-color: transparent;
+    /**/
+    padding: 15px;
+}
+
+/*Se aplica estilos a los elementos h2 que se encuentren dentro de la clase banner.*/
+.banner h2 {
+    color: white;
+    font-size: 40px;
+    font-family: 'Bree Serif', serif;
+}
+
+.banner span {
+    font-size: 1.5em;
+}
+
+nav {
+    background-color: silver;
+    padding: 20px;
+    /**/
+    position: sticky;
+    /*Este vaor corresponde a la altura del header.*/
+    top: 35px;
+}
+
+nav li {
+    /*Pone un elmento detrás del otro en una línea.*/
+    display: inline-block;
+    width: 25%;
+    font-size: 25px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white
+}
+
+nav li a:hover {
+    color:  rgb(65, 65, 235);
+}
+
+nav ul {
+    /*Evita que se asigne un retorno de carro en un linea.*/
+    white-space: nowrap;
+    /*Ancho del elemento respecto al contenedor padre.*/
+    max-width: 800px;
+    /*
+        Se asigna un margen 
+        primer valor indica el margen desde arriba y desde abajo.
+        segundo valor indica el valor automatico de izquierda y de derecha.
+
+        El margen esta en función del ancho del elemento, en este caso a partir del valor
+        indicado por el atributo max-width.
+    */
+    margin: 0 auto;
+}
+
+main {
+    background-color: transparent;
+
+    max-width: 100%;
+    width: 1200px;
+    /*con esta propiedad centramos texto en un contenedor.*/
+    margin: 0px auto;
+    padding: 20px 40px;
+    /*Se indica que el padding forme parte del ancho maximo del contenedor.*/
+    box-sizing: border-box;
+}
+
+article h2 {
+    color:  rgb(65, 65, 235);
+    
+}
+
+.imagenes {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.imagenes li {
+    display: inline-block;
+    width: 30%;
+    margin: 20px 5%;
+}
+
+.imagenes li img {
+    max-width: 100%;
+}
+
+/*
+    Pseudo clases:
+    Son estilos que se aplican cuando el objeto se encuentra en un estado en particular.
+    Por ejemplo: :hover :focus :first-child
+
+*/
+.imagenes li:hover {
+    position: relative;
+    top: -4px;
+    left: 4px;
+}
+
+footer {
+    background: silver;
+    color:  white;
+    padding: 10px;
+}
+
+.copyright {
+    
+    font-size: 16px;
+    text-decoration: solid;
+    text-align: center;
+    
+}
+
+/*****Media Queries*****/
+@media screen and (max-width: 1400px) {
+    .banner h2 {
+        color: white;
+        font-size: 35px;
+    }
+
+    nav li {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .banner h2 {
+        color: white;
+        font-size: 25px;
+    }
+
+    nav li {
+        font-size: 14px;
+        display: block;
+        width: 100%;
+        margin: 12px auto;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .banner h2 {
+        color: white;
+        font-size: 10px;
+    }
+
+    nav li {
+        font-size: 10px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        Tamaño de la pantalla donde se visualizará el sitio Web.
+        Tomar en cuenta estos atributos para el tema de responsividad.
+
+        El valor de viewport únicamente será leído por móviles, tablets y en general 
+        cualquier dispositivo móvil. Estos parametros indican lo siguiente:
+            Que el ancho del contenido se adaptará al ancho de la pantalla del dispositivo
+            y que el zoom (tamaño) inicial del contenido será de 100%
+
+        Un sitio responsividad ajusta su contenido a cualquier tamaño de la pantalla de un dispositivo.
+        
+        Media Querys.- Le dicen al navegador que estilo tendrá cada elemento para cada tamaño de pantalla
+        Viewport meta tag.- Le indica al navegadorel tamaño que tiene la pantalla.
+        Responsive images.- Se carga imagenes de un tamaño más pequeño para pantallas más pequeñas.
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet"/> 
+    <title>Programming Languages</title>
+</head>
+<body>
+    <!--Elemento destinado para el encabezado del sitio.-->
+    <header>
+        <h1>Programming Languages</h1>
+    </header>
+
+    <!--Una sección, es como un div.-->
+    <section class="banner">
+        <img src="imagenes/lenguagesProgramacion.jpg">
+        <div class="welcome">
+            <h2>Welcome to 
+            <br/><span>Programmers Club.</span></h2>
+        </div>
+    </section>
+
+    <!--Nav es como una barra de navegación dentro del sitio Web.-->
+    <nav class="main-nav">
+        <ul>
+            <li>
+                <a href="#">Java</a>
+            </li>
+            <li>
+                <a href="#">C#</a>
+            </li>
+            <li>
+                <a href="#">Python</a>
+            </li>
+            <li>
+                <a href="#">JavaScript and Angular</a>
+            </li>
+        </ul>
+        
+    </nav>
+
+    <!--Caja con todo el contenido principal del sitio.-->
+    <main>
+        <!--Refiere a un articulo dentro del sitio.-->
+        <article>
+            <h2>Hi, I am Jose Luis Rojas</h2>
+            <p>
+                I heve been Software develper for mora than 15 years and Currently I am
+                software Architec in JAVA Technology. 
+            </p>
+        </article>
+        <ul class="imagenes">
+            <li><img src="imagenes/java-logo.png"/></li>
+            <li><img src="imagenes/csharp-logo.png"/></li>
+            <li><img src="imagenes/python-logo.png"/></li>
+            <li><img src="imagenes/angular-logo.png"/></li>
+        </ul>
+    </main>
+
+    <!--Información relacionada al pie de página -->
+    <footer>
+        <p class="copyright">Copyright José Luis Rojas Gómez.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            form {
+                display: grid;
+                grid-template-columns: 200px 1fr;
+                grid-gap: 16px;
+            }
+            
+            label {
+                grid-column: 1/2;
+                
+            }
+
+            input, 
+            button {
+                grid-column: 2/3;
+            }
+        </style>
+    </head>
+    <body>
+        <header>Registro</header>
+        <main>
+            <form>
+                <label for="firstName" class="first-name">
+                    First Name
+                </label>
+                <input id="firstName" type="text"/>
+                <label for="lastName" class="last-name">
+                    Last Name
+                </label>
+                <input id="firstNlastNameame" type="text"/>
+                <button>Enviar</button>
+            </form>
+        </main>
+
+        <footer>
+            <p class="copyright">Copyright José Luis Rojas Gómez.</p>
+        </footer>
+    </body>
+</html>
