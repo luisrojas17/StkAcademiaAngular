@@ -1,0 +1,52 @@
+<!--<div class="container">-->
+    <h1>{{msgTitulo}}</h1>
+      
+    <div *ngIf="editarProducto == false">
+
+      <div class="card" style="width: 18rem; margin-bottom: 15px;"
+          *ngFor="let producto of productos">
+
+          <div class="card-body bg-light">
+
+            <h5 class="card-title">{{producto.nombre}} - {{producto.marca}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{producto.id}}</h6>
+          
+            <p class="card-text">{{producto.precio}}.00</p>
+
+            <!--producto es una valirable local definida en la directiva ngFor-->
+            
+            <button type="button" class="btn btn-danger btn-sm" style="margin: 10px;" 
+              (click)="eliminar(producto)">Eliminar</button>
+            
+            <button type="button" class="btn btn-primary btn-sm"
+              (click)="editar(producto)">Editar</button>
+        
+          </div>
+
+      </div>
+
+    </div>
+      
+    <div *ngIf="editarProducto" style="display: flex; align-items: center;">
+      <form (ngSubmit)="actualizar()" >
+        <input type="text" class="form-control" name="nombre"
+          placeholder="Nombre" [(ngModel)]="productoAEditar.nombre"/>
+        <br/>
+        <input type="text" class="form-control" name="marca"
+          placeholder="Marca" [(ngModel)]="productoAEditar.marca"/>
+        <br/>
+        <input type="text" class="form-control" name="precio"
+          placeholder="Precio" [(ngModel)]="productoAEditar.precio"/>
+        <br/>
+        
+        <div style="display: inline-block;">
+
+          <button class="btn btn-primary btn-sm" style="margin: 10px;" type="submit">Actualizar</button>
+          <button class="btn btn-primary btn-sm" (click)="cancelarActualizacion()">Cancelar</button>       
+
+        </div>
+                
+      </form>
+    </div>
+<!--</div>-->
+

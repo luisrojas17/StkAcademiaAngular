@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "stkangular-41319": {
+      "hosting": {
+        "StkAngularWithFirebase": [
+          "stkangular-41319"
+        ]
+      }
+    }
+  }
+}

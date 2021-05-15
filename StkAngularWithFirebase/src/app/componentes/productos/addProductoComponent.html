@@ -1,0 +1,17 @@
+<!--<div class="container">-->
+    <h1>{{msgTitulo}}</h1>
+    <form (ngSubmit)="agregar()">
+        <input type="text" class="form-control" name="nombre"
+            placeholder="Nombre" [(ngModel)]="producto.nombre"/>
+        <br/>
+        <input type="text" class="form-control" name="marca"
+            placeholder="Marca" [(ngModel)]="producto.marca"/>
+        <br/>
+        <input type="text" class="form-control" name="precio"
+            placeholder="Precio" [(ngModel)]="producto.precio"/>
+        <br/>
+        <button class="btn btn-primary" type="submit">Agregar</button>
+    </form>
+    <br/>
+    <p>{{producto.nombre}}- {{producto.marca}} - {{producto.precio}}</p>
+<!--</div>-->

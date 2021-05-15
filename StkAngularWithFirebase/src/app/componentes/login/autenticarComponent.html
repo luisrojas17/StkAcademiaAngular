@@ -1,0 +1,30 @@
+<div *ngIf="!isLogged()">
+    <h1>{{msgLogin}}</h1>
+    <button class="btn btn-primary mb-2" (click)="login()">
+        Autenticar con Google
+    </button>
+</div>
+
+<div *ngIf="isLogged()">
+    <h1>{{msgLogout}}</h1>
+    <button class="btn btn-primary mb-2" (click)="logout()">
+        Logout
+    </button>
+</div>
+
+<div class="row justify-content-center" *ngIf="isLogged()">
+
+    <div class="col-4">
+        <div class="card">
+            <img class="card-img-top" src="{{usuario.fotoURL}}" alt="usuario" height="5%" width="5%"/>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">{{usuario.nombre}}</h5>
+            <p class="card-text">{{usuario.id}}</p>
+            <p class="card-text">
+                <small class="text-muted">{{usuario.email}}</small>
+            </p>
+        </div>
+    </div>
+
+</div>
